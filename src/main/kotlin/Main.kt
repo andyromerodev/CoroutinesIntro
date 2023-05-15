@@ -1,12 +1,9 @@
 fun main() {
-    val states = arrayOf("Starting", "Doing Task 1", "Doing Task 2", "Ending")
-    repeat(3) {
+    var count = 0
+    for (i in 1..50) {
         Thread {
-            println("${Thread.currentThread()} has started")
-            for (i in states) {
-                println("${Thread.currentThread()} - $i")
-                Thread.sleep(50)
-            }
+            count += 1
+            println("Thread: $i count: $count")
         }.start()
     }
 }
