@@ -1,9 +1,12 @@
+import kotlinx.coroutines.*
+
 fun main() {
-    var count = 0
-    for (i in 1..50) {
-        Thread {
-            count += 1
-            println("Thread: $i count: $count")
-        }.start()
+
+    println("Hola Andy")
+
+    repeat(3) {
+        GlobalScope.launch {
+            println("Hi from ${Thread.currentThread()}")
+        }
     }
 }
